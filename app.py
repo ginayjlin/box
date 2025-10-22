@@ -165,7 +165,7 @@ def download_zip(zip_name):
         return "File not found", 404
     return send_from_directory(OUTPUT_FOLDER, safe_name, as_attachment=True)
 
-@app.route("/google12345abcde.html")
+@app.route("/googlecdb4d549bcbc96aa.html")
 def google_verification():
     return "google-site-verification: googlecdb4d549bcbc96aa.html"
     
