@@ -10,12 +10,11 @@ import matplotlib
 matplotlib.use('Agg')  # 避免沒有 GUI
 import matplotlib.pyplot as plt
 import seaborn as sns
-from matplotlib import font_manager
 
-# ===== 設定中文字型 =====
-my_font = font_manager.FontProperties(fname="fonts/SimHei.ttf")
-plt.rcParams['font.sans-serif'] = [my_font.get_name()]
-plt.rcParams['axes.unicode_minus'] = False
+
+# 設定字型，Render 上不用上傳字型檔
+plt.rcParams['font.family'] = 'DejaVu Sans'  # 或 'sans-serif'
+plt.rcParams['axes.unicode_minus'] = False   # 避免負號顯示問題
 
 
 app = Flask(__name__)
