@@ -160,6 +160,8 @@ def download_zip(zip_name):
         return "File not found", 404
     return send_from_directory(OUTPUT_FOLDER, safe_name, as_attachment=True)
 
-
 if __name__ == "__main__":
-    app.run(host="10.100.8.143", port=5000, debug=True , use_reloader=False)
+    app.run(host="0.0.0.0", port=10000, debug=True)
+
+# if __name__ == "__main__":
+#     app.run(host="10.100.8.143", port=5000, debug=True , use_reloader=False)
