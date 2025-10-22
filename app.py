@@ -1,16 +1,22 @@
 #只有bpxplot
-
-from flask import Flask, render_template, request, send_from_directory, jsonify
-import pandas as pd
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-import seaborn as sns
 import os
 import uuid
 import zipfile
 import time
 import shutil
+from flask import Flask, render_template, request, send_from_directory, jsonify
+import pandas as pd
+import matplotlib
+matplotlib.use('Agg')  # 避免沒有 GUI
+import matplotlib.pyplot as plt
+import seaborn as sns
+from matplotlib import font_manager
+
+# ===== 設定中文字型 =====
+my_font = font_manager.FontProperties(fname="fonts/SimHei.ttf")
+plt.rcParams['font.sans-serif'] = [my_font.get_name()]
+plt.rcParams['axes.unicode_minus'] = False
+
 
 app = Flask(__name__)
 
